@@ -1,0 +1,41 @@
+<h1>Zinobe Pokemon</h1>
+
+<div class="pokedex">
+  <div class="pokedex-pokemon" *ngFor="let p of pokemon; let i = index">
+    <div class="pokedex-pokemon-id">
+      {{ p.name }}
+    </div>
+    
+    <img class="pokedex-pokemon-sprite"  src="{{imagePath + i + '.png'}}" >
+    <div class="pokedex-pokemon-name">
+      {{  capitalize }}
+    </div>
+    <button (click)="capturePokemon(p)">
+        Atrapar
+  </button>
+  </div>
+  
+</div>
+
+<h2>Pokemon atrapados</h2>
+
+<div class="pokedex">
+  <div class="pokedex-pokemon" *ngFor="let p of capturePoke; let i = index">
+    <div class="pokedex-pokemon-id">
+      {{ p.name }}
+    </div>
+    <img class="pokedex-pokemon-sprite"  src="{{imagePath + idPath[i] + '.png'}}" >
+    <div class="pokedex-pokemon-name">
+      {{  capitalize }}
+    </div>
+    <button (click)="capturePokemon(p)">
+        Atrapar
+  </button>
+  </div>
+  
+</div>
+
+
+
+
+<router-outlet></router-outlet>
